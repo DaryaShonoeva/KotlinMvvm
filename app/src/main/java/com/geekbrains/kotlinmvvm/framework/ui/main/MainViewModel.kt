@@ -1,4 +1,4 @@
-package com.geekbrains.kotlinmvvm.ui.main
+package com.geekbrains.kotlinmvvm.framework.ui.main
 
 import androidx.lifecycle.ViewModel
 
