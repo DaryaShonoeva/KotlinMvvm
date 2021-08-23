@@ -1,8 +1,9 @@
-package com.geekbrains.kotlinmvvm
+package com.geekbrains.kotlinmvvm.framework.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.geekbrains.kotlinmvvm.ui.main.MainFragment
+import com.geekbrains.kotlinmvvm.R
+import com.geekbrains.kotlinmvvm.framework.ui.main.MainFragment
 
 class MainActivity : AppCompatActivity() {
 
