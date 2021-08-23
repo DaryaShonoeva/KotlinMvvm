@@ -10,6 +10,7 @@ import androidx.lifecycle.Observer
 import com.geekbrains.kotlinmvvm.AppState
 import com.geekbrains.kotlinmvvm.R
 import com.geekbrains.kotlinmvvm.databinding.MainFragmentBinding
+import com.geekbrains.kotlinmvvm.model.entities.Description
 import com.google.android.material.snackbar.Snackbar
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -40,9 +41,9 @@ class MainFragment : Fragment() {
     private fun renderData(appState: AppState) = with(binding) {
         when (appState) {
             is AppState.Success -> {
-                val weatherData = appState.weatherData
+                val filmData = appState.filmData
                 progressBar.visibility = View.GONE
-                Snackbar.make(mainView, "Success", Snackbar.LENGTH_LONG).show()
+                setData(filmData)
             }
             is AppState.Loading -> {
                 progressBar.visibility = View.VISIBLE
@@ -55,6 +56,15 @@ class MainFragment : Fragment() {
                     .show()
             }
         }
+
+    }
+    private fun setData(filmData: Description) = with(binding) {
+        filmName.text = filmData.name.name
+        filmCategories.text = filmData.categories.toString()
+        filmDuration.text = filmData.duration.toString()
+        filmRating.text = filmData.rating.toString()
+        filmBudget.text = filmData.budget.toString()
+        filmDescription.text = filmData.description.toString()
 
     }
 
